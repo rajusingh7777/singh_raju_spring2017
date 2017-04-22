@@ -2,7 +2,7 @@
 
 
 # PROBLEM STATEMENT
-![alt tag](http://..//images/1.png)
+![alt tag](http://../Final/images/1.png)
 To collect and store data through API and perform any 3 analysis on any dataset.
 I have taken Boston Crime Dataset from a government website- https://data.cityofboston.gov/
 
