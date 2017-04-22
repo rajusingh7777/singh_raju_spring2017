@@ -73,14 +73,36 @@ Post Analysis we deduce the information that what and why certain crimes takes p
 4. Thus, perfomed the anlysis on the crime incidents for year 2013 till 2016.
 5. Done groupby over the year and count the crime incidents:
 
-![data_store_str](images/a1.png)
+![incidents_byyear](images/a1.png)
 
-Conclude that there is only subtle rise in crime over the years:
+Conclude that:
+1. There is only subtle rise in crime over the years:
 
-We take further dig into the data and check for which week the crime happend mostly:
+I take further dig into the data and check for which week the crime happened mostly:
+1. I performed groupby function over the days of the week.
+2. Ploted the crime against week
+
+![incident_byweek](images/a2.png)
+
+Conclude that:
+1. Most crime reported on the Friday
+2. Reason could be anything related with partying- intoxication and resulted behavior like vandalism but we cannot deduce the direct conclusion on this.
 
 
-2. If we check the crime rate of last 4 years.
+1. I now need to do further analysis to check the charges impressed upon the convict by police dept.
+2. I checked the number of crime associated with drug, drink charges on the day of the week.
+Note: A person can be charged with multiple complaints.
+3. Filtered out the crime charge with drugs, drinks and realted likely event like vandalism.
+4. Ploted the crime drugs/drinks/vandalism against days of the week.
+
+![incident_byweek](images/a3.png)
+
+Conclude that:
+Drugs/drinks/vandalism related crime happened spike up on Friday.
+
+Overall conclusion:
+Crime incident in Boston over the year is subtle and when analyze crime incident by days, Friday comes out of the most voilent day of the week and reason could be drug/drinks and related crime action like vandalism which make up most of the crime number compared to other days of the week.  
+
 
 
 # Analysis 2:
