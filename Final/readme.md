@@ -1,13 +1,15 @@
-# ANALYSIS PATTERN- 2 (API to collect data and store + 3 Analysis 
+# ANALYSIS PATTERN- 2 (API TO COLLECT DATA AND STORE + 3 ANALYSIS)
 
+![topic_analysis](images/1.png)
 
 # PROBLEM STATEMENT
-![topic_analysis](images/1.png)
+
 To collect and store data through API and perform any 3 analysis on any dataset.
 I have taken Boston Crime Datasets from a government website- https://data.cityofboston.gov/ and perform three analysis on the them. In order to support further arugument in analysis, I have added a new dataset hosted on the same website.
 
 
 # DATA PROCESSING
+
 
 # Data calling:
 
@@ -47,25 +49,28 @@ For all the analysis I have used the processed data only inorder to intact the j
 # ANALYSIS OF BOSTON CRIME
 
 
-# Brief Introduction of Analysis-
+# BRIEF INTRODUCTION OF ANALYSIS-
+
 
 # Objective of Analysis:
+
 I have around six years of Boston crime records. I want to analyze the crime pattern of Boston over the six year and how crimes go change over the different neighborhood (Districts) of Boston.
 
 # What are those Analysis:
 
-1. 
-2.
-3.
+1. Crime over year besides over week- what crime and why it cause.
+2. Crime over the different neighborhood (Districts) of Boston
+3. Police Patrolling/Stops and Crime Analysis in Boston
 
 # Conclusion of the Analysis:
+
 Post Analysis we deduce the information that what and why certain crimes takes place on a particule day of a neighborhood (District) of Boston. Also, plottings have been done on Boston map to illustrate lucid pattern over different Boston's districts.  
 
 
-# Details of the Analysis performed-
+# DETAILS OF THE ANALYSIS PERFORMED-
 
 
-# Analysis 1: Crime over year besides over week- what crime and why it cause.
+# Analysis 1: Crime over year besides over week- what crime and why it cause
 
 1. Analysing the number of crime indicents in Boston over the years.
 2. Through pandas read csv function, access the processed data where merged crime database was placed.
@@ -116,21 +121,21 @@ Crime incident in Boston over the year is subtle and when analyze crime incident
 7. We can see from above that map the crime spread all over but more concentrated in central part of Boston.
 8. However, to find which district is more affected, I have plotted the crime incidents by districts and find out the top five crime affected district
 
-![total_incident_maptoBoston](images/b2.png)
+![topfivedistrict_affectedbycrime](images/b2.png)
 
 Histogram plot of crime number of all District of Boston.
 
-![total_incident_maptoBoston](images/b3.png)
+![total_incident_districtwise](images/b3.png)
 
 9. I also, analyse Aggraveted Assualt, Homicide/Murder on the Boston map.
 (Definition:
 Homicide is the killing of one person by another. Murder is a form of criminal homicide, where the perpetrator intended to kill the other person, sometimes with premeditation (a plan to kill).)
 
-![total_incident_maptoBoston](images/b4.png)
+![assult_Homicide_maptoBoston](images/b4.png)
 
 10. I wanted to check if Aggraveted Assualt resulted in Homicide or vice-versa. Thus, I try to plot Aggravted Assualt against the Homicide/Murder.
 
-![total_incident_maptoBoston](images/b5.png)
+![assult_Homicide_pattern](images/b5.png)
 
 11. Conclude that:
 From the plot we can see that Assualt and Homicide/Murder overlap to some extend. There could be possiblity that some of the Aggravted assult might turn out into Homicide/Murder.
@@ -138,13 +143,48 @@ From the plot we can see that Assualt and Homicide/Murder overlap to some extend
 # Overall Conclusion:
 We can see that crime happen almost every part of Boston but top five affected districts are B2, D4, C11, A1 and B3. Aggraveted Assult and Murder/Homicide incidences are more prominent in said Boston District than its periphery.
 
-When analyze Aggraveted assult and Homicide/Murder we can see some pattern. Some of the Aggravted assult might turn out into Homicide/Murder post the demise of the victim which result to series of other charges being framed against the accuse like murder, Homicide, intend to murder etc.  
+When analyze Aggraveted assult and Homicide/Murder we can see some pattern. Some of the Aggravted assult might turn out into Homicide/Murder post the demise of the victim which result to series of other charges being framed against the accuse like murder, Homicide, intend to murder etc.
+
+Also, most of such incidents happened between June till mid Sep during time when people are mostly active outdoor and enjoying the warm wheather compared to end of fall and winter season. 
 
 
-# Analysis 3:
+# Analysis 3: Police Patrolling/Stops and Crime Analysis in Boston
+
+1. I wanted to check if there is any relationship between crime incidents and police patrolling and their stops/barricading.
+2. I wanted to check how it could affect any crime pattern in affected areas.
+3. Since I had only crime database, I could not deduce any relation between crime pattern and police patrolling/stops.
+4. I found the Boston gov website https://data.cityofboston.gov/ host similar database- Boston Police Department FIO.
+
+Definition: Boston police department FIO program is a stop and frisk program. FIO’s document details when an individual is stopped and frisked for a potential threat, a suspect or gang member.
+
+5. I collected FIO dataset through API in json format as raw data and put them in 'data' folder. I dump the json files together and created a csv file in 'processedData' folder. I used csv file for my further analysis.
+
+Note: I've created seperate codes in same python file which was used to collect and store intital crime datasets. 
+
+6. Call data from both Crime and FIO database and start analysing the relationship between them
+
+7. I want to analyze the relation between the FIO numbers and Crime incidents by District. For this I have consolidated crime and FIO number over 12 districts and check the pattern.
+
+![crime_FIO_patternbydistrict](images/c1.png)
+
+8. From above plot, it can be deduce that FIO is most frequent in those districts which are most crime affected
+
+9. Further, I want to check if FIO increases how it affects the crime. For this I have consolidated crime and FIO number over month and check the pattern.
+
+![crime_FIO_patternbymonth](images/c2.png)
+
+10. From above graph we can conclude that FIO is inversely proprotional to the Crime numbers. When FIO number is more crime is less and vice-versa.
+
+11. I thought to check if any particular crime such as Auto Theft is affected with FIO in any district. 
+12. For this analayis, I taken up the top four district where FIOs were most and checked if Auto Theft crime is reduce with FIO number or not.
+
+![autotheftcrime_FIO_patternbytopfourdistrict](images/c3.png)
+
+# Overall Conclusion:
+For above plots, we can deduce that FIO is performed in region which is more affected by crime. Also, we analyze the relation between FIO and Crime over month it can be conclude that when FIO is performed most the crime reduces substantially. However, when we focused on a particular crime such as Auto Theft across top four districts where FIOs were most, the Auto Theft crime seems to reduce but no strong conclusive evidence can be make out of it.
 
 
-# Addtional Instructions to Run the code:
+# ADDITIONAL INSTRUCTIONS TO RUN THE CODE:
 
 1. I have added the basemap library which is an extension of matplotlib library to plot the data over geographical location of any part of the world based on Logitude and Latitude cordinates.
 
@@ -162,15 +202,3 @@ Note: If any analysis on this environment requires supporting libraries to be in
 Citation & Reference:
 https://matplotlib.org/basemap/users/examples.html
 http://introtopython.org/visualization_earthquakes.html
-
-
-
-
-
-
-
-
-
-
-
-
