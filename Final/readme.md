@@ -65,9 +65,9 @@ Post Analysis we deduce the information that what and why certain crimes takes p
 # Details of the Analysis performed-
 
 
-# Analysis 1:
+# Analysis 1: Crime over year besides over week- what crime and why it cause.
 
-1. Analysing the number of crime indicents in boston over the years.
+1. Analysing the number of crime indicents in Boston over the years.
 2. Through pandas read csv function, access the processed data where merged crime database was placed.
 3. Since, the database has data from Aug 2012 till Apr 2017, I have filtered out the year 2012 and 2017 from this analysis.
 4. Thus, perfomed the anlysis on the crime incidents for year 2013 till 2016.
@@ -75,37 +75,70 @@ Post Analysis we deduce the information that what and why certain crimes takes p
 
 ![incidents_byyear](images/a1.png)
 
-Conclude that:
-1. There is only subtle rise in crime over the years:
+6. From above plot we can duduce that there is only subtle rise in crime over the years:
 
-I take further dig into the data and check for which week the crime happened mostly:
-1. I performed groupby function over the days of the week.
-2. Ploted the crime against week
+7. I take further dig into the data and check for which week the crime happened mostly:
+8. I performed groupby function over the days of the week.
+9. Ploted the crime against week
 
 ![incident_byweek](images/a2.png)
 
-Conclude that:
-1. Most crime reported on the Friday
-2. Reason could be anything related with partying- intoxication and resulted behavior like vandalism but we cannot deduce the direct conclusion on this.
+10. From above plot we can conclude that Most crime reported on the Friday
+11. Also, reason could be anything related with partying- intoxication and resulted behavior like vandalism but we cannot deduce the direct conclusion on this.
 
 
-1. I now need to do further analysis to check the charges impressed upon the convict by police dept.
-2. I checked the number of crime associated with drug, drink charges on the day of the week.
+12. I now need to do further analysis to check the charges impressed upon the convict by police dept.
+13. I checked the number of crime associated with drug, drink charges on the day of the week.
 Note: A person can be charged with multiple complaints.
-3. Filtered out the crime charge with drugs, drinks and realted likely event like vandalism.
-4. Ploted the crime drugs/drinks/vandalism against days of the week.
+14. Filtered out the crime charge with drugs, drinks and realted likely event like vandalism.
+15. Ploted the crime drugs/drinks/vandalism against days of the week.
 
-![incident_byweek](images/a3.png)
+![specific_incident_byweek](images/a3.png)
 
-Conclude that:
-Drugs/drinks/vandalism related crime happened spike up on Friday.
+16 We can conclude from above plot that Drugs/drinks/vandalism related crime happened spike up on Friday.
 
-Overall conclusion:
+# Overall Conclusion:
 Crime incident in Boston over the year is subtle and when analyze crime incident by days, Friday comes out of the most voilent day of the week and reason could be drug/drinks and related crime action like vandalism which make up most of the crime number compared to other days of the week.  
 
 
 
-# Analysis 2:
+# Analysis 2: Crime over the different neighborhood (Districts) of Boston
+
+1. Analysing the number of crime indicents in Boston neighborhood over the years.
+2. Through pandas read csv function, access the processed data where merged crime database was placed.
+3. I plotted the total crime incident of the Boston map using the Basemap libary (a extension of matplotlib- please refer Additional Instruction).
+4. To plot the crime incidents over the Boston map I have had to find the central latitude and longitude of Boston.
+5. Further, basemap has all the coordinates of the earth. So, in order to zoom in the area of interest i.e. Boston region I have to give upperright and lowerleft longitude and latitude condinates in basemap function.
+6. It zoom-in the Boston region and there I plot all crime reported accross Boston
+
+![total_incident_maptoBoston](images/b1.png)
+
+7. We can see from above that map the crime spread all over but more concentrated in central part of Boston.
+8. However, to find which district is more affected, I have plotted the crime incidents by districts and find out the top five crime affected district
+
+![total_incident_maptoBoston](images/b2.png)
+
+Histogram plot of crime number of all District of Boston.
+
+![total_incident_maptoBoston](images/b3.png)
+
+9. I also, analyse Aggraveted Assualt, Homicide/Murder on the Boston map.
+(Definition:
+Homicide is the killing of one person by another. Murder is a form of criminal homicide, where the perpetrator intended to kill the other person, sometimes with premeditation (a plan to kill).)
+
+![total_incident_maptoBoston](images/b4.png)
+
+10. I wanted to check if Aggraveted Assualt resulted in Homicide or vice-versa. Thus, I try to plot Aggravted Assualt against the Homicide/Murder.
+
+![total_incident_maptoBoston](images/b5.png)
+
+11. Conclude that:
+From the plot we can see that Assualt and Homicide/Murder overlap to some extend. There could be possiblity that some of the Aggravted assult might turn out into Homicide/Murder.
+
+# Overall Conclusion:
+We can see that crime happen almost every part of Boston but top five affected districts are B2, D4, C11, A1 and B3. Aggraveted Assult and Murder/Homicide incidences are more prominent in said Boston District than its periphery.
+
+When analyze Aggraveted assult and Homicide/Murder we can see some pattern. Some of the Aggravted assult might turn out into Homicide/Murder post the demise of the victim which result to series of other charges being framed against the accuse like murder, Homicide, intend to murder etc.  
 
 
 # Analysis 3:
